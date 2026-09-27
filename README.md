@@ -139,6 +139,8 @@ The app can import visual profiles, but a full image-and-overlay design editor i
 
 ## Startup and the system tray
 
+A single left-click on the main tray icon shows the selected keyboard. Right-click opens its menu.
+
 The main tray menu contains:
 
 - **Keyboard settings → keyboard name:** edit that keyboard, even while its on-screen keyboard is hidden.

@@ -141,6 +141,8 @@ The app can import visual profiles, but a full image-and-overlay design editor i
 
 A single left-click on the main tray icon shows the selected keyboard. Right-click opens its menu.
 
+Hover over the main tray icon to see the installed version, for example **MicroPad - v1.2.1**.
+
 The main tray menu contains:
 
 - **Keyboard settings → keyboard name:** edit that keyboard, even while its on-screen keyboard is hidden.

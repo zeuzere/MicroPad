@@ -94,12 +94,12 @@ Choose a mode in **Settings → Sessions** for the keyboard whose settings you o
 | Mode | Best for | Behavior |
 | --- | --- | --- |
 | **Manual** | Fixed assignments | Choose which session each key opens. |
-| **Automatic** | Following your recent work | Available keys follow the most recently active, confirmed-open main sessions. |
+| **Automatic** | Following your recent work | Available keys follow the most recently used main sessions, whether currently open or not. |
 | **Hybrid** | A mix of fixed and automatic keys | Unpinned keys update automatically; pinned keys keep their sessions. |
 
 Automatic capacity depends on the number of configured session slots, not a fixed six-key limit. Subagent sessions are excluded. In Hybrid mode, manual assignment pins the selected session. You can also use **Pin this session** or **Release to automatic** in the key editor.
 
-When MicroPad confirms a session has closed, it clears that binding. Automatic and unpinned Hybrid slots can take a replacement; Manual slots remain unassigned. A finished or idle session is not the same as a closed session. If MicroPad cannot confidently determine whether a session is still open, it preserves its existing assignment.
+Automatic and unpinned Hybrid keys follow recent session activity, even when a session is closed or its open state cannot be detected. The most recent sessions fill the configured slots; existing keys stay stable while their sessions remain in that recent set. Hybrid pins keep their assigned sessions. Empty slots remain only when there are fewer eligible main sessions than available slots.
 
 ## Understand the colors
 
@@ -167,17 +167,22 @@ The choice applies to settings, keyboard editing, color selection, and menus, in
 
 ### Individual session tray icons
 
-Right-click a key → **Edit key** → enable **Show this key in system tray**. Its icon displays the key label and state color; hover for the session details, and click to open the session. Right-click the icon → **Hide from tray** to remove it and uncheck that preference. The session binding remains intact.
+Right-click a key with an attached session and choose **Show in tray** or **Hide from tray**. The menu adapts to that key's current preference and does not list other keys. Keys without a session do not show this action. You can also change **Show this key in system tray** under **Edit key**.
+
+Its tray icon displays the key label and state color; hover for session details, and click to open the session. Right-click the icon → **Hide from tray** to remove it and uncheck that preference. The session binding remains intact.
 
 Windows may initially put these icons in its hidden-icons area.
 
 ## Supported apps and current limits
 
+Codex is the default destination. Clicking a session key opens that exact session by ID and launches Codex if needed. If its saved app/tab destination cannot be confirmed open or focused, the key falls back to Codex.
+
+
 - **Codex is the current session provider.** Claude Code, Pi, Herdr, and other agents are not integrated yet.
 - Sessions must be available in local Codex data. Cloud-only sessions without local data are not monitored.
 - Codex Desktop assignments open the saved session. Physical hold binding can also save a supported application's current window/tab, including Windows Terminal.
 - Exact VS Code terminal integration requires the separate **MicroPad Terminal Bridge** extension. That extension is not included in this executable-only download.
-- App/tab capture depends on what Windows accessibility exposes. Rebind after closing or replacing the target tab, restarting its app, or reloading the VS Code extension. MicroPad avoids guessing a replacement based on its title.
+- App/tab capture depends on what Windows accessibility exposes. To keep using a specific app/tab rather than the Codex fallback, rebind after closing or replacing the tab, restarting its app, or reloading the VS Code extension. MicroPad avoids guessing a replacement based on its title.
 - State detection is based on available local session data. Some approval prompts or questions may not appear there; colors can lag or show Unknown. Local data formats can change between Codex versions.
 - Knob Model/Reasoning settings can be saved, but turning a knob does **not** change the live model or reasoning level in this release.
 - A profile for another keyboard enables its virtual appearance; it does not add physical input or LED support for that hardware.

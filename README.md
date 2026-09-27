@@ -10,7 +10,7 @@ This public repository contains the portable application and this guide. The sou
 
 ## Download and start
 
-**[Download MicroPad.exe for Windows 11 — Intel/AMD 64-bit](https://github.com/zeuzere/MicroPad/raw/refs/heads/main/MicroPad.exe)**
+**[Download MicroPad.exe for Windows 11 — Intel/AMD 64-bit](https://github.com/zeuzere/MicroPad/releases/latest/download/MicroPad.exe)**
 
 1. Save `MicroPad.exe` in a folder you want to keep.
 2. Double-click it. No installer or separate .NET installation is needed.
@@ -34,6 +34,7 @@ Run only one MicroPad copy at a time. Codex must be installed and have local ses
 - Load keyboard profiles containing a layout, artwork, and key overlays.
 - Put individual session keys in the Windows system tray.
 - Remember assignments, profiles, pins, colors, and startup preferences.
+- Check for new portable versions and optionally install them automatically.
 
 ## Everyday controls
 
@@ -142,6 +143,7 @@ The main tray menu contains:
 - **Settings:** open the settings for the most recently active keyboard.
 - **Keyboards → keyboard name:** show a keyboard.
 - **Keyboards → Show all / Hide all:** show or hide all keyboard windows.
+- **Check for updates:** check GitHub for a newer portable version.
 - **Exit:** stop MicroPad.
 
 Each keyboard's **Open on application start** checkbox saves immediately. Only checked keyboards open when MicroPad launches. If none are checked, it starts in the tray only. Showing or hiding a keyboard during use does not change this preference.
@@ -167,7 +169,23 @@ Windows may initially put these icons in its hidden-icons area.
 
 ## Updates, saved data, and removal
 
-To update, choose **Exit**, download the new executable, replace your old copy, and launch it again. There is no automatic updater. Keep the same path if you use Start with Windows.
+### Built-in portable updates
+
+Starting with version **1.1.0**, portable MicroPad checks GitHub Releases for updates. **If you have an older copy, download the current executable once to get this feature.** Normal development builds do not use the updater.
+
+Under **Settings → App**, you can choose:
+
+- **Check for updates automatically** — on by default. Checks at startup and every six hours. If you are offline, MicroPad continues working.
+- **Install updates automatically** — off by default. When enabled along with automatic checking, downloads and installs new versions when no binding, navigation, or open editor needs your attention.
+- **Check for updates** — check now. The same action is in the tray menu.
+
+When a new version is found, a tray notification lets you review it. Choose **Update now** or **Later**. The update downloads while the app is still running; its version, size, and SHA-256 checksum must match the GitHub release before installation.
+
+MicroPad then closes, replaces its executable, and restarts from the same location with the keyboard windows you had open. Saved settings remain intact. The previous executable is kept beside it as `MicroPad.exe.previous` (or your executable's name followed by `.previous`). If replacement fails, the old executable remains; if the new version fails to start, the updater attempts to restore and relaunch the previous one and reports the problem. A failed update is not retried automatically over and over; use a manual check to retry.
+
+The executable's folder must be writable. The updater does not silently request administrator access. Downloaded files and update logs are kept under the local settings folder's `Updates` directory; completed download/helper executables are cleaned up after startup. Updates contact GitHub for public release information and downloads; they do not upload your session settings.
+
+Manual updating still works: choose **Exit**, download the new executable, replace your old copy, and launch it again. Keep the same path if you use Start with Windows.
 
 Portable means no installation is required. Settings are stored on the computer, not inside the executable, under:
 
@@ -187,6 +205,7 @@ To remove MicroPad, turn off **Start with Windows** if enabled, choose **Exit**,
 | --- | --- |
 | Nothing appears after launch | Open the hidden tray icons, then **Keyboards → Show all**. Tray-only startup is normal when no keyboards are checked. |
 | “Already running” | Open the existing tray instance, or exit it before launching another copy. |
+| Cannot install an update | Check internet access, disk space, and permission to write to the executable's folder. The app keeps the previous executable. Use **Check for updates** to retry or download manually. |
 | No sessions appear | Start Codex locally and send a first prompt. Check that its local session data is available under the current Windows account. |
 | A click does nothing | Check that the key has a session assigned. An empty key needs a session slot and an assignment. |
 | A hold opens a session picker | Automatic identification was unavailable or ambiguous. Select the intended session manually. |

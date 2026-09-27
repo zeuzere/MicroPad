@@ -50,6 +50,8 @@ Run only one MicroPad copy at a time. Codex must be installed and have local ses
 | **Hide to tray** | Hide the keyboard while MicroPad keeps running. |
 | **Exit MicroPad** | Stop the application. |
 
+The **Open** submenu is hidden when there is only one keyboard. It refreshes when you right-click, so added, renamed, or removed keyboards appear correctly without restarting.
+
 An unassigned key does not open a session. Right-click it to configure it. Closing a keyboard hides it; it does not quit MicroPad. Escape cancels a pending swap or closes the active editor/panel, and otherwise hides the keyboard.
 
 ### Swap two sessions with the mouse

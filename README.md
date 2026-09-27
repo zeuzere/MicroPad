@@ -15,7 +15,7 @@ This public repository contains the portable application and this guide. The sou
 1. Save `MicroPad.exe` in a folder you want to keep.
 2. Double-click it. No installer or separate .NET installation is needed.
 3. Look for MicroPad in the Windows system tray, near the clock. You may need to open the hidden-icons arrow.
-4. Right-click its tray icon and choose **Keyboards → My keyboard**, or **Show all**.
+4. Right-click its tray icon and choose **Keyboards → My keyboard**, or **Show** when multiple keyboards are configured.
 5. Start a local Codex session. Right-click a key, choose **Edit key**, then **Assign session**. If the key has no session slot yet, choose **Add session key** first.
 6. Click the assigned key to return to that session.
 
@@ -37,6 +37,9 @@ Run only one MicroPad copy at a time. Codex must be installed and have local ses
 - Check for new portable versions and optionally install them automatically.
 
 ## Everyday controls
+
+Drag a keyboard window's edges or corners to resize it. Its image, labels, overlays, and clickable keys scale together without stretching. Settings and editor windows keep their existing size.
+
 
 | Action | What it does |
 | --- | --- |
@@ -148,7 +151,7 @@ The main tray menu contains:
 - **Keyboard settings → keyboard name:** edit that keyboard, even while its on-screen keyboard is hidden.
 - **Settings:** open the settings for the most recently active keyboard.
 - **Keyboards → keyboard name:** show a keyboard.
-- **Keyboards → Show all / Hide all:** show or hide all keyboard windows.
+- **Keyboards → Show / Hide:** show or hide all keyboard windows. With only one keyboard, **Show** is hidden; select its name to open it.
 - **Check for updates:** check GitHub for a newer portable version.
 - **Exit:** stop MicroPad.
 
@@ -215,7 +218,7 @@ To remove MicroPad, turn off **Start with Windows** if enabled, choose **Exit**,
 
 | Problem | Try this |
 | --- | --- |
-| Nothing appears after launch | Open the hidden tray icons, then **Keyboards → Show all**. Tray-only startup is normal when no keyboards are checked. |
+| Nothing appears after launch | Open the hidden tray icons, then select your keyboard under **Keyboards**. Tray-only startup is normal when no keyboards are checked. |
 | “Already running” | Open the existing tray instance, or exit it before launching another copy. |
 | Cannot install an update | Check internet access, disk space, and permission to write to the executable's folder. The app keeps the previous executable. Use **Check for updates** to retry or download manually. |
 | No sessions appear | Start Codex locally and send a first prompt. Check that its local session data is available under the current Windows account. |

@@ -154,6 +154,12 @@ Each keyboard's **Open on application start** checkbox saves immediately. Only c
 
 **Settings → App → Start with Windows** controls whether MicroPad itself launches when you sign in. Keep the executable in its chosen location if you enable this. The App page also offers always-on-top, centering, hiding, diagnostics, and restart as administrator.
 
+### Light and dark appearance
+
+In **Settings > App > Appearance**, choose **System**, **Dark**, or **Light**. System is the default and follows the Windows app theme, including changes made while MicroPad is running.
+
+The choice applies to settings, keyboard editing, color selection, and menus, including the main system tray menu and each session icon's menu. Changes apply immediately and are saved for the next launch. Keyboard images, overlay colors, and session state colors keep their own appearance.
+
 ### Individual session tray icons
 
 Right-click a key → **Edit key** → enable **Show this key in system tray**. Its icon displays the key label and state color; hover for the session details, and click to open the session. Right-click the icon → **Hide from tray** to remove it and uncheck that preference. The session binding remains intact.
